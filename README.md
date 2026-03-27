@@ -1,6 +1,6 @@
-# Growtek Challenge — CRM demo
+# Growtek Challenge
 
-Demo de CRM en el navegador: tablero Kanban, contactos, empresas, listas y ficha de deal. Todo el estado va a Zustand y de ahí a `localStorage`. No hay API ni servidor; si cierras el navegador y borras datos del sitio, te quedas sin backup a menos que hayas exportado algo.
+Demo: tablero Kanban, contactos, empresas, listas y ficha de deal. Todo el estado va a Zustand y de ahí a `localStorage`. No hay API ni servidor; si cierras el navegador y borras datos del sitio, te quedas sin backup a menos que hayas exportado algo.
 
 ## Requisitos
 
