@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/* Growtek: cielo (sky) + pizarra (slate) — neutros fríos, sin verde/púrpura tipo Brevo */
+@theme {
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --color-brand-50: var(--color-sky-50);
+  --color-brand-100: var(--color-sky-100);
+  --color-brand-200: var(--color-sky-200);
+  --color-brand-500: var(--color-sky-500);
+  --color-brand-600: var(--color-sky-600);
+  --color-brand-700: var(--color-sky-700);
+}
+
+:root {
+  --surface-canvas: oklch(0.968 0.007 264);
+  --surface-raised: oklch(1 0 0);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  @apply bg-slate-100 text-slate-900 antialiased;
+}
