@@ -1,25 +1,51 @@
-# Growtek challenge (CRM demo)
+# Growtek Challenge — CRM demo
 
-SPA con React, Vite, React Router, Zustand (persist en `localStorage`) y Tailwind.
+Demo de CRM en el navegador: tablero Kanban, contactos, empresas, listas y ficha de deal. Todo el estado va a Zustand y de ahí a `localStorage`. No hay API ni servidor; si cierras el navegador y borras datos del sitio, te quedas sin backup a menos que hayas exportado algo.
 
-## Desarrollo
+## Requisitos
 
-```bash
-pnpm install
-pnpm dev
+Node 20 o superior y pnpm.
+
+## Instalación y scripts
+
+| Comando | Qué hace |
+|--------|----------|
+| `pnpm install` | Instala dependencias |
+| `pnpm dev` | Arranca Vite en desarrollo |
+| `pnpm run build` | `tsc` + build a `dist/` |
+| `pnpm run preview` | Sirve la build localmente |
+| `pnpm run lint` | ESLint |
+
+Tras `pnpm dev`, la URL sale en consola; suele ser `http://localhost:5173`.
+
+## Stack
+
+React 19 y TypeScript, Vite 8, React Router 7. Zustand con `persist` (claves tipo `growtek-deals`, `growtek-contacts`, etc.). Tailwind 4, @dnd-kit en el tablero, motion en drawers, Sonner para toasts.
+
+## Qué incluye
+
+Puedes mover deals por etapas, crear deals y abrir el detalle con historial de etapas. Contactos y empresas van en tablas con búsqueda y paginación; los formularios salen en drawers. Las rutas `/contacts/new` y `/companies/new` redirigen con `?create=1` para abrir el mismo flujo. Las listas de contactos se pueden borrar solo si ya no tienen contactos asignados.
+
+En la cabecera, el menú "Datos" deja exportar un JSON con todo, importar uno guardado antes o volver al dataset de demo (esto último machaca lo que tengas sin exportar).
+
+## Datos y backup
+
+Todo queda en tu navegador. Cambias de ordenador o limpias almacenamiento y no hay magia: o exportaste, o no.
+
+## Privacidad
+
+No hay login, ni cifrado pensado para producción, ni capa legal sobre datos personales. Mejor no meter datos reales; va para pruebas, mockups o enseñar el repo.
+
+## Carpetas en `src/`
+
+```
+src/
+  components/   deals, contacts, companies, y ui/ compartido
+  hooks/        useDeals, useContacts, etc.
+  lib/          formatos, mutaciones CRM, export/import
+  pages/        rutas
+  stores/       Zustand persistido
+  types/
 ```
 
-```bash
-pnpm run build
-pnpm run lint
-```
-
-## Datos locales
-
-- Toda la información vive en el **navegador** (`localStorage`). No hay servidor ni sincronización en la nube.
-- Puedes **exportar / importar** un JSON desde el menú **Datos** en la cabecera (respaldo manual).
-- **Restaurar demo** vuelve a los datos semilla iniciales (se pierden los cambios locales).
-
-## Privacidad y PII
-
-Esta aplicación **no está pensada para datos personales reales**: no hay cifrado, control de acceso ni cumplimiento normativo. Úsala solo con datos de prueba o ficticios.
+Es un front aislado a propósito: persistencia local en lugar de backend.
