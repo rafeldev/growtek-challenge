@@ -16,7 +16,7 @@ Node 20 o superior y pnpm.
 | `pnpm run preview` | Sirve la build localmente |
 | `pnpm run lint` | ESLint |
 
-Tras `pnpm dev`, la URL sale en consola; suele ser `http://localhost:5173`.
+`pnpm dev`, -> `http://localhost:5173`.
 
 ## Stack
 
@@ -27,14 +27,6 @@ React 19 y TypeScript, Vite 8, React Router 7. Zustand con `persist` (claves tip
 Puedes mover deals por etapas, crear deals y abrir el detalle con historial de etapas. Contactos y empresas van en tablas con búsqueda y paginación; los formularios salen en drawers. Las rutas `/contacts/new` y `/companies/new` redirigen con `?create=1` para abrir el mismo flujo. Las listas de contactos se pueden borrar solo si ya no tienen contactos asignados.
 
 En la cabecera, el menú "Datos" deja exportar un JSON con todo, importar uno guardado antes o volver al dataset de demo (esto último machaca lo que tengas sin exportar).
-
-## Datos y backup
-
-Todo queda en tu navegador. Cambias de ordenador o limpias almacenamiento y no hay magia: o exportaste, o no.
-
-## Privacidad
-
-No hay login, ni cifrado pensado para producción, ni capa legal sobre datos personales. Mejor no meter datos reales; va para pruebas, mockups o enseñar el repo.
 
 ## Carpetas en `src/`
 
