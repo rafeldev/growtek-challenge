@@ -13,7 +13,6 @@ Node 20 o superior y pnpm.
 | `pnpm install` | Instala dependencias |
 | `pnpm dev` | Arranca Vite en desarrollo |
 | `pnpm run build` | `tsc` + build a `dist/` |
-| `pnpm run preview` | Sirve la build localmente |
 | `pnpm run lint` | ESLint |
 
 `pnpm dev`, -> `http://localhost:5173`.
